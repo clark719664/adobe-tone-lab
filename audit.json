@@ -1,0 +1,7 @@
+{
+  "source_integrity": "pass",
+  "public_cases": 61,
+  "scene_cases": 27,
+  "joint_cases": [],
+  "joint_fidelity": "blocked_missing_oracle"
+}

@@ -1,0 +1,200 @@
+{
+  "fidelity_status": "joint_references_missing",
+  "split": {
+    "train": [
+      "scene1",
+      "scene3"
+    ],
+    "holdout": [
+      "scene4"
+    ]
+  },
+  "cases": {
+    "scene1/S+100": {
+      "mae": 0.025938473371456296,
+      "max": 0.0643522758531736,
+      "effect_ev": 0.15840935437309947,
+      "effect_blocks": 384,
+      "within_upstream_accepted_distance": false,
+      "upstream_accepted_distance": {
+        "mae": 0.00872,
+        "max": 0.03753,
+        "effect": 0.0455
+      }
+    },
+    "scene1/S-50": {
+      "mae": 0.012620259775408225,
+      "max": 0.029863730087168194,
+      "effect_ev": 0.08297156152683847,
+      "effect_blocks": 384,
+      "within_upstream_accepted_distance": false,
+      "upstream_accepted_distance": {
+        "mae": 0.00247,
+        "max": 0.01523,
+        "effect": 0.01875
+      }
+    },
+    "scene1/H-100": {
+      "mae": 0.018818385947886596,
+      "max": 0.1736922363693877,
+      "effect_ev": 0.08588130376113878,
+      "effect_blocks": 384,
+      "within_upstream_accepted_distance": false,
+      "upstream_accepted_distance": {
+        "mae": 0.01472,
+        "max": 0.09472,
+        "effect": 0.07893
+      }
+    },
+    "scene1/H+50": {
+      "mae": 0.008825382598194471,
+      "max": 0.061901256932942905,
+      "effect_ev": 0.038795719184008585,
+      "effect_blocks": 381,
+      "within_upstream_accepted_distance": false,
+      "upstream_accepted_distance": {
+        "mae": 0.00572,
+        "max": 0.02535,
+        "effect": 0.02284
+      }
+    },
+    "scene3/S+100": {
+      "mae": 0.0026240917182338316,
+      "max": 0.010116710003998101,
+      "effect_ev": 0.07957760114132396,
+      "effect_blocks": 384,
+      "within_upstream_accepted_distance": true,
+      "upstream_accepted_distance": {
+        "mae": 0.00263,
+        "max": 0.00739,
+        "effect": 0.12258
+      }
+    },
+    "scene3/S-50": {
+      "mae": 0.0009450128182571486,
+      "max": 0.004083254921498643,
+      "effect_ev": 0.02977779234471636,
+      "effect_blocks": 384,
+      "within_upstream_accepted_distance": true,
+      "upstream_accepted_distance": {
+        "mae": 0.00362,
+        "max": 0.00695,
+        "effect": 0.06678
+      }
+    },
+    "scene3/H-100": {
+      "mae": 0.003899718509848224,
+      "max": 0.06651991811597971,
+      "effect_ev": 0.08705640338359334,
+      "effect_blocks": 384,
+      "within_upstream_accepted_distance": false,
+      "upstream_accepted_distance": {
+        "mae": 0.00475,
+        "max": 0.01024,
+        "effect": 0.08887
+      }
+    },
+    "scene3/H+50": {
+      "mae": 0.0021310198400996774,
+      "max": 0.05213779307321709,
+      "effect_ev": 0.04291180783098012,
+      "effect_blocks": 384,
+      "within_upstream_accepted_distance": false,
+      "upstream_accepted_distance": {
+        "mae": 0.00078,
+        "max": 0.01677,
+        "effect": 0.0363
+      }
+    },
+    "scene4/S+100": {
+      "mae": 0.06231853400256444,
+      "max": 0.249862585648983,
+      "effect_ev": 0.25299719449575286,
+      "effect_blocks": 352,
+      "within_upstream_accepted_distance": false,
+      "upstream_accepted_distance": {
+        "mae": 0.03038,
+        "max": 0.11543,
+        "effect": 0.11526
+      }
+    },
+    "scene4/S-50": {
+      "mae": 0.02949249254031908,
+      "max": 0.08913448103440946,
+      "effect_ev": 0.13505813215047235,
+      "effect_blocks": 356,
+      "within_upstream_accepted_distance": false,
+      "upstream_accepted_distance": {
+        "mae": 0.01546,
+        "max": 0.04014,
+        "effect": 0.06602
+      }
+    },
+    "scene4/H-100": {
+      "mae": 0.07327462652420019,
+      "max": 0.12238057875758168,
+      "effect_ev": 0.26678964326828825,
+      "effect_blocks": 356,
+      "within_upstream_accepted_distance": false,
+      "upstream_accepted_distance": {
+        "mae": 0.00959,
+        "max": 0.05498,
+        "effect": 0.03128
+      }
+    },
+    "scene4/H+50": {
+      "mae": 0.033788611483594876,
+      "max": 0.0592210791308988,
+      "effect_ev": 0.1211011954349453,
+      "effect_blocks": 346,
+      "within_upstream_accepted_distance": false,
+      "upstream_accepted_distance": {
+        "mae": 0.00315,
+        "max": 0.03557,
+        "effect": 0.01202
+      }
+    }
+  },
+  "default_cases": {
+    "scene1/default": {
+      "mae": 0.0,
+      "max": 0.0,
+      "within_upstream_accepted_distance": true,
+      "upstream_accepted_distance": {
+        "mae": 0.00145,
+        "max": 0.00665
+      }
+    },
+    "scene3/default": {
+      "mae": 0.0,
+      "max": 0.0,
+      "within_upstream_accepted_distance": true,
+      "upstream_accepted_distance": {
+        "mae": 0.00156,
+        "max": 0.00322
+      }
+    },
+    "scene4/default": {
+      "mae": 0.0,
+      "max": 0.0,
+      "within_upstream_accepted_distance": true,
+      "upstream_accepted_distance": {
+        "mae": 0.00121,
+        "max": 0.0157
+      }
+    }
+  },
+  "holdout_cases": [
+    "scene4/S+100",
+    "scene4/S-50",
+    "scene4/H-100",
+    "scene4/H+50"
+  ],
+  "anti_regression_pass": false,
+  "limits": [
+    "Single-slider block means only; no joint or private-photo validation.",
+    "Upstream accepted distances are historical thresholds, not a fresh local engine run.",
+    "No parameters were fitted here; scene4 is reserved for future candidate evaluation."
+  ],
+  "operator": "no-op: frozen Adobe default used unchanged for each edited case"
+}

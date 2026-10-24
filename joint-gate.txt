@@ -1,0 +1,1 @@
+FAIL: missing joint Adobe references: 21 paired exports absent; first: scene1__default.tif

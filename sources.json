@@ -1,0 +1,96 @@
+{
+  "rawmakase": {
+    "url": "https://github.com/pch/rawmakase",
+    "commit": "6c60222a927ec54cea9bb11624615b3d2baa6aa9"
+  },
+  "photocraft": {
+    "url": "https://github.com/storytold/photocraft",
+    "commit": "a02f2ee41059d3312e7ff24a5af5edcac7b6435a"
+  },
+  "files": [
+    {
+      "file": "vendor/scene-probes.json",
+      "source": "tests/corpus/camera-raw/scene-probes.json",
+      "repo": "rawmakase",
+      "sha256": "812b6b0d5bc0cfa2eb429ad01da90ab39fd61bb452e454a27e45bbaa6bd553f8"
+    },
+    {
+      "file": "vendor/engine-accepted-distances.json",
+      "source": "tests/corpus/camera-raw/scene-probes-baseline.json",
+      "repo": "rawmakase",
+      "sha256": "a03db821eda1d834d5acae81c9b55d3b11ea0037ccf575f5efa81483190504cb"
+    },
+    {
+      "file": "vendor/probe_dng.py",
+      "source": "scripts/corpus/probe_dng.py",
+      "repo": "rawmakase",
+      "sha256": "9d04df8ef2b8eec9e2e3e1cd61a5ec20c4c475b281910b511ca670f9909992fa"
+    },
+    {
+      "file": "vendor/probe_scenes.py",
+      "source": "scripts/corpus/probe_scenes.py",
+      "repo": "rawmakase",
+      "sha256": "c2c2e7370fcb62cb9a9cac07604ccbc4011863d0db9d35fddd4e9cd106a8de71"
+    },
+    {
+      "file": "vendor/rawmakase-LICENSE",
+      "source": "LICENSE",
+      "repo": "rawmakase",
+      "sha256": "ac7ef7a297f119a67c39afe4f3ff74e970ee9b6c1769b4dd26b5a4d4c0a04cc7"
+    },
+    {
+      "file": "vendor/photocraft-LICENSE-MIT",
+      "source": "LICENSE-MIT",
+      "repo": "photocraft",
+      "sha256": "77c414bd870a0cc1a5ec06e7aeae0d379713d1d5d2d38e8d0903002e4d572537"
+    },
+    {
+      "file": "vendor/photocraft-LICENSE-APACHE",
+      "source": "LICENSE-APACHE",
+      "repo": "photocraft",
+      "sha256": "eb3d7b5485466acbd81f2b496f595ab637d2792e268206b27d99e793bdb67549"
+    },
+    {
+      "file": "vendor/local_tone.rs",
+      "source": "crates/algo/src/camera_raw/local_tone.rs",
+      "repo": "photocraft",
+      "sha256": "8337048390c978d6549d7a68f03588f9aaa16da6eed3d3d2264b0b67c343a4f9"
+    },
+    {
+      "file": "vendor/photocraft-camera_raw.rs",
+      "source": "crates/algo/src/camera_raw.rs",
+      "repo": "photocraft",
+      "sha256": "5efce1fe7412e72f3a14d12c3d3379edd74add02bdcbc87b3005157b5b94a6b3"
+    },
+    {
+      "file": "vendor/photocraft-photo_util.rs",
+      "source": "crates/algo/src/photo_util.rs",
+      "repo": "photocraft",
+      "sha256": "88c4ab3ef9e21a37346428edf23de6491f0107a62d1a8798f19b36fb162e99c7"
+    },
+    {
+      "file": "vendor/photocraft-convert.rs",
+      "source": "crates/color/src/convert.rs",
+      "repo": "photocraft",
+      "sha256": "0fd80ead97a68269a915a960b459d7ced0e76039583c4b8107c994a6b231802a"
+    },
+    {
+      "file": "vendor/scene1.dng",
+      "source": "tests/corpus/scene-probes/scene1.dng",
+      "repo": "rawmakase",
+      "sha256": "d2c8ca967ae34171ca740231a68aa8641f989a39762f32cc7f205dfc23fab681"
+    },
+    {
+      "file": "vendor/scene3.dng",
+      "source": "tests/corpus/scene-probes/scene3.dng",
+      "repo": "rawmakase",
+      "sha256": "ca9caec9c2f82d3ab87a2aad045cb3436c8e6da27163a8e1cf711d73e06ea728"
+    },
+    {
+      "file": "vendor/scene4.dng",
+      "source": "tests/corpus/scene-probes/scene4.dng",
+      "repo": "rawmakase",
+      "sha256": "4633eeeb2866969fed1c08158a92a6cc72b43b96eb508ed1490c0f948fd078c0"
+    }
+  ]
+}

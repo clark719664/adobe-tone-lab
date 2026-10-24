@@ -1,0 +1,13 @@
+
+running 8 tests
+test local_tone::tests::a_flat_image_is_unchanged ... ok
+test local_tone::tests::grey_moves_as_in_photoshop ... ok
+test local_tone::tests::highlights_lower_a_bright_area_and_keep_the_darkest ... ok
+test local_tone::tests::quantile_is_the_sorted_element ... ok
+test local_tone::tests::shadows_raise_a_dark_area_without_a_halo ... ok
+test local_tone::tests::smooth_gradients_stay_smooth ... ok
+test local_tone::tests::the_fast_pyramid_matches_the_plain_one_exactly ... ok
+test local_tone::tests::the_result_does_not_depend_on_the_image_size ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.33s
+

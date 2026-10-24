@@ -1,0 +1,24 @@
+{
+  "operator": "actual pinned PhotoCraft local_tone.rs, serial scheduler; upstream Encoding/luma/helpers",
+  "oracle": "Photoshop25.4 Camera Raw Filter; upstream grey_moves_as_in_photoshop saved measurements",
+  "rows": [
+    {
+      "shadows": 100.0,
+      "highlights": 0.0,
+      "measured_255": 165.2136,
+      "adobe_255": 165.3,
+      "absolute_error_255": 0.08641052
+    },
+    {
+      "shadows": 0.0,
+      "highlights": -100.0,
+      "measured_255": 90.35554,
+      "adobe_255": 89.6,
+      "absolute_error_255": 0.75553894
+    }
+  ],
+  "elapsed_seconds": 0.125,
+  "within_upstream_5_level_tolerance": true,
+  "joint_fidelity": "unmeasured: no saved joint grey oracle",
+  "limits": "Two neutral-grey single-slider spots only. Not the full app, RAWmakase pipeline, color-space interoperability, Adobe18.7 or photo holdout parity."
+}

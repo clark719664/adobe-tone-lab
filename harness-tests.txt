@@ -1,0 +1,18 @@
+test_acquisition_has_paired_cases_and_hashes (test_benchmark.MetricsTests.test_acquisition_has_paired_cases_and_hashes) ... ok
+test_candidate_default_is_in_anti_regression_gate (test_benchmark.MetricsTests.test_candidate_default_is_in_anti_regression_gate) ... ok
+test_candidate_missing_default_fails (test_benchmark.MetricsTests.test_candidate_missing_default_fails) ... ok
+test_empty_effect_support_is_not_a_pass (test_benchmark.MetricsTests.test_empty_effect_support_is_not_a_pass) ... ok
+test_exact_values_and_effect (test_benchmark.MetricsTests.test_exact_values_and_effect) ... ok
+test_fixtures_match_source_pins (test_benchmark.MetricsTests.test_fixtures_match_source_pins) ... ok
+test_joint_gate_fails_when_oracle_absent (test_benchmark.MetricsTests.test_joint_gate_fails_when_oracle_absent) ... ok
+test_noop_baseline_has_twelve_edited_cases (test_benchmark.MetricsTests.test_noop_baseline_has_twelve_edited_cases) ... ok
+test_one_stop_effect_error (test_benchmark.MetricsTests.test_one_stop_effect_error) ... ok
+test_oracle_self_comparison_is_only_a_scorer_sanity_check (test_benchmark.MetricsTests.test_oracle_self_comparison_is_only_a_scorer_sanity_check) ... ok
+test_rejects_malformed_predictions (test_benchmark.MetricsTests.test_rejects_malformed_predictions) ... ok
+test_train_and_holdout_do_not_overlap (test_benchmark.MetricsTests.test_train_and_holdout_do_not_overlap) ... ok
+test_xmp_attributes_match_every_capture_job (test_benchmark.MetricsTests.test_xmp_attributes_match_every_capture_job) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.145s
+
+OK
