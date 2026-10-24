@@ -15,3 +15,5 @@ preview_acquisition/portable-cache/
 *.tmp
 .env
 .env.*
+linear_research/target/
+linear_research/scratch/

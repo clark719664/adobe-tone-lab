@@ -8,3 +8,5 @@ vendor/** -text
 acquisition/inputs/** -text
 
 preview_reference/previews/** -text
+# The independently reviewed appendix pins every distributable file by SHA-256.
+linear_research/** -text

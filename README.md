@@ -6,6 +6,8 @@ The measured conditional postrender baseline has joint MAE **10.8562/255 on trai
 
 See [PREVIEW.md](PREVIEW.md) for the evidence, acquisition procedure, limitations and rejected experiments.
 
+The isolated [native linear-stage appendix](linear_research/README.md) evaluates pinned RAWmakase source against known linear inputs and includes fourteen additional Adobe texture-control previews. It found no justified joint correction: errors inherited from the individual controls dominate its joint error, and the texture experiment did not establish a cause. Its diagnostic counterfactuals use reference outputs and are not deployable predictors.
+
 ## Run from a fresh clone
 
 Use Python 3.12, Rust stable and its native linker. On Windows, run native builds from a Visual Studio Developer Command Prompt or an equivalent configured build environment. From the repository root:
@@ -57,4 +59,4 @@ With the paired TIFF batch absent, `joint-gate` must return exit 2. The importer
 
 The authored harness/acquisition code and documentation are MIT licensed in LICENSE. Vendored RAWmakase files remain MIT licensed; PhotoCraft files remain MIT-or-Apache-2.0. Complete notices are in `vendor/`; generated PhotoCraft wrappers retain those upstream terms.
 
-GitHub Actions installs the pinned preview dependencies, runs all Python tests, reproduces the native preview baseline, runs the unchanged PhotoCraft tests and checks the absent-TIFF exit code. Successful CI verifies this toolkit and its recorded benchmark, not broad Adobe parity.
+GitHub Actions installs the pinned preview dependencies, runs the 37 main Python tests and 15 isolated appendix tests, reproduces both native baselines and the texture diagnostics, runs the unchanged PhotoCraft tests and checks the absent-TIFF exit code. Successful CI verifies this toolkit and its recorded measurements, not broad Adobe parity.

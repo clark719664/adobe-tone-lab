@@ -1,0 +1,13 @@
+[package]
+name = "linear-tone-probe"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rayon = "=1.12.0"
+
+[[bin]]
+name = "linear-tone-probe"
+path = "linear_probe.rs"
+
+[workspace]

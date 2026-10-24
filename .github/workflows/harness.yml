@@ -12,11 +12,58 @@ jobs:
         with:
           python-version: '3.12'
       - uses: dtolnay/rust-toolchain@stable
-      - run: python -m pip install -r requirements-preview.txt
+      - run: python -m pip install -r requirements-preview.txt -r linear_research/requirements.txt
       - run: python -m unittest discover -s . -v
       - name: Reproduce the real Adobe preview baseline
         run: python preview_benchmark.py --oracle preview_reference --families preview_reference/families.json --build-dir .build/preview --out .build/reproduced-preview-baseline.json
       - run: python run_photocraft.py --build-dir work/build
+      - name: Verify the exact reviewed linear appendix package
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib, json
+          root = Path('linear_research')
+          manifest = json.loads((root / 'package-sha256.json').read_text())
+          assert len(manifest) == 77
+          for name, digest in manifest.items():
+              assert hashlib.sha256((root / name).read_bytes()).hexdigest() == digest, name
+          print('All 77 pinned appendix files match the reviewed package.')
+      - name: Build the actual native linear-stage probe
+        run: cargo build --locked --release --jobs 1 --manifest-path linear_research/Cargo.toml
+      - name: Run the 15 isolated linear-stage tests
+        working-directory: linear_research
+        run: python -m unittest discover -s . -p "test_*.py" -v
+      - name: Generate the original known-linear source inputs
+        run: python preview_families.py .build/linear-inputs
+      - name: Reproduce all 126 linear baseline cases and training-only calibration
+        run: python linear_research/measure.py --inputs .build/linear-inputs --reference preview_reference --cache .build/linear-cache --output .build/linear-baseline.json --refit-transfer .build/linear-transfer.npz
+      - name: Reproduce the 36 baseline RGB diagnostic identities
+        run: python linear_research/decompose.py --manifest preview_reference/families.json --previews preview_reference/previews --cache .build/linear-cache --transfer .build/linear-transfer.npz --output .build/linear-decomposition.json
+      - name: Reproduce all 14 texture-control cases
+        run: python linear_research/measure.py --inputs linear_research/texture-diagnostic/inputs --reference linear_research/texture-diagnostic --cache .build/linear-texture-cache --output .build/linear-texture-baseline.json
+      - name: Reproduce the four texture RGB diagnostic identities
+        run: python linear_research/decompose.py --manifest linear_research/texture-diagnostic/families.json --previews linear_research/texture-diagnostic/previews --cache .build/linear-texture-cache --transfer linear_research/neutral-transfer-global.npz --output .build/linear-texture-decomposition.json
+      - name: Compare the reproduced negative results to the reviewed measurements
+        shell: python
+        run: |
+          from pathlib import Path
+          import json
+          def load(name):
+              return json.loads(Path(name).read_text())
+          def compare(expected, actual, expected_key, count):
+              expected = {row['id']: row for row in expected}
+              actual = {row['id']: row for row in actual}
+              assert len(expected) == len(actual) == count
+              assert expected.keys() == actual.keys()
+              delta = max(abs(expected[key][expected_key] - actual[key]['baseline']) for key in expected)
+              assert delta < 1e-9, delta
+              print(f'{count} native measurements reproduced; maximum MAE delta {delta}.')
+          compare(load('linear_research/linear-global-baseline.json'), load('.build/linear-baseline.json'), 'baseline', 126)
+          texture_expected = [row for row in load('linear_research/texture-diagnostic/results.json')['cases'] if row['scene'].endswith('-texture')]
+          compare(texture_expected, load('.build/linear-texture-baseline.json'), 'mae_255', 14)
+          assert len(load('.build/linear-decomposition.json')['cases']) == 36
+          assert len(load('.build/linear-texture-decomposition.json')['cases']) == 4
+          print('All 36 + 4 diagnostic RGB identities were recomputed and verified.')
       - name: Missing 16-bit TIFF joint references remain explicitly unavailable
         shell: pwsh
         run: |

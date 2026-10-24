@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/pch/rawmakase",
+  "commit": "6c60222a927ec54cea9bb11624615b3d2baa6aa9",
+  "files": {
+    "vendor/clarity.rs": "5fab7f28aa1df379b85663eeb0a8bd28ea2b47631ef11c1242fe2a4bd2e67d9f",
+    "vendor/clarity_data.rs": "47c56d3a0ec7d34b12ebd85ed7b541065fd04bae16241782c9882343b7d3cac2",
+    "vendor/LICENSE": "ac7ef7a297f119a67c39afe4f3ff74e970ee9b6c1769b4dd26b5a4d4c0a04cc7",
+    "vendor/local_tone.rs": "80b49543b587e270f2ad9b96476c1ea47c231a548c1b5dbb9ae295d54c80d12e",
+    "vendor/local_tone_data.rs": "a24dd266cdccdb635134fc50bab2c196fc255f0c4860071282565f43a092c42d",
+    "vendor/shadow_context.rs": "ec0a1a50846236d4852282a3ba63b8e684dfb13e3e34a6c87fec701be0c17337",
+    "vendor/shadow_context_data.rs": "6b865515a9d823dd2494653add1f7b0c39dcb5b20ce859d8fea90931bbff7a21",
+    "vendor/scene_tone/blacks.bin": "947e6b1d52c1b1d3c1f2678b0933935dcf622d210be176bca6bc11ff33301805",
+    "vendor/scene_tone/default_black.bin": "db2f7ef0cc5c31d8ab0fb8810b50ca54ea23df3b0ccbd4607eac6174b8519697",
+    "vendor/scene_tone/global.rs": "2c1f7ae5a12a1582f555de694c468d427fd00fe003b3558b09b8f8236846deb5",
+    "vendor/scene_tone/masks.bin": "0da64e25f6e8d0e5bd732e1ac9a2805a53533d7b4b0e6d206b871122afe366b9",
+    "vendor/scene_tone/white.bin": "73d0700c43702daeea71b35f0d3062e0a2e032cea3db3033d79fb5b25eb07732",
+    "vendor/scene_tone/white3.bin": "42ad51c60e31703b48c39be067b6d986728e281bd4134d69684b4faab821aec8"
+  }
+}

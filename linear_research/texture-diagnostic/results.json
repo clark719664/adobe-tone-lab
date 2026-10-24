@@ -1,0 +1,239 @@
+{
+  "contract": "frozen native model/shared training calibration; two training-family texture diagnostics; no fit or holdout claim",
+  "cases": [
+    {
+      "id": "stripes-0__default",
+      "scene": "stripes-0",
+      "setting": "default",
+      "mae_255": 0.32073435012845636
+    },
+    {
+      "id": "stripes-0__S+100",
+      "scene": "stripes-0",
+      "setting": "S+100",
+      "mae_255": 21.06059535830383
+    },
+    {
+      "id": "stripes-0__H-100",
+      "scene": "stripes-0",
+      "setting": "H-100",
+      "mae_255": 14.493607634973007
+    },
+    {
+      "id": "stripes-0__S+50",
+      "scene": "stripes-0",
+      "setting": "S+50",
+      "mae_255": 8.71716165234746
+    },
+    {
+      "id": "stripes-0__H-50",
+      "scene": "stripes-0",
+      "setting": "H-50",
+      "mae_255": 8.837248982425852
+    },
+    {
+      "id": "stripes-0__S+100_H-100",
+      "scene": "stripes-0",
+      "setting": "S+100_H-100",
+      "mae_255": 32.022047798679075
+    },
+    {
+      "id": "stripes-0__S+50_H-50",
+      "scene": "stripes-0",
+      "setting": "S+50_H-50",
+      "mae_255": 15.583591827927705
+    },
+    {
+      "id": "checker-0__default",
+      "scene": "checker-0",
+      "setting": "default",
+      "mae_255": 3.0171307880736613
+    },
+    {
+      "id": "checker-0__S+100",
+      "scene": "checker-0",
+      "setting": "S+100",
+      "mae_255": 19.985664164561353
+    },
+    {
+      "id": "checker-0__H-100",
+      "scene": "checker-0",
+      "setting": "H-100",
+      "mae_255": 20.157022781557586
+    },
+    {
+      "id": "checker-0__S+50",
+      "scene": "checker-0",
+      "setting": "S+50",
+      "mae_255": 9.324836896031082
+    },
+    {
+      "id": "checker-0__H-50",
+      "scene": "checker-0",
+      "setting": "H-50",
+      "mae_255": 12.72470898263156
+    },
+    {
+      "id": "checker-0__S+100_H-100",
+      "scene": "checker-0",
+      "setting": "S+100_H-100",
+      "mae_255": 36.13218677443694
+    },
+    {
+      "id": "checker-0__S+50_H-50",
+      "scene": "checker-0",
+      "setting": "S+50_H-50",
+      "mae_255": 18.759676422966283
+    },
+    {
+      "id": "stripes-0-texture__default",
+      "scene": "stripes-0-texture",
+      "setting": "default",
+      "mae_255": 0.8913076124288105
+    },
+    {
+      "id": "stripes-0-texture__S+100",
+      "scene": "stripes-0-texture",
+      "setting": "S+100",
+      "mae_255": 21.972940074272863
+    },
+    {
+      "id": "stripes-0-texture__H-100",
+      "scene": "stripes-0-texture",
+      "setting": "H-100",
+      "mae_255": 20.32490650604962
+    },
+    {
+      "id": "stripes-0-texture__S+50",
+      "scene": "stripes-0-texture",
+      "setting": "S+50",
+      "mae_255": 9.34963848314303
+    },
+    {
+      "id": "stripes-0-texture__H-50",
+      "scene": "stripes-0-texture",
+      "setting": "H-50",
+      "mae_255": 12.79593062842768
+    },
+    {
+      "id": "stripes-0-texture__S+100_H-100",
+      "scene": "stripes-0-texture",
+      "setting": "S+100_H-100",
+      "mae_255": 38.71305930610577
+    },
+    {
+      "id": "stripes-0-texture__S+50_H-50",
+      "scene": "stripes-0-texture",
+      "setting": "S+50_H-50",
+      "mae_255": 19.9425233977861
+    },
+    {
+      "id": "checker-0-texture__default",
+      "scene": "checker-0-texture",
+      "setting": "default",
+      "mae_255": 3.1906793674893494
+    },
+    {
+      "id": "checker-0-texture__S+100",
+      "scene": "checker-0-texture",
+      "setting": "S+100",
+      "mae_255": 19.64756475539106
+    },
+    {
+      "id": "checker-0-texture__H-100",
+      "scene": "checker-0-texture",
+      "setting": "H-100",
+      "mae_255": 21.282521076786374
+    },
+    {
+      "id": "checker-0-texture__S+50",
+      "scene": "checker-0-texture",
+      "setting": "S+50",
+      "mae_255": 9.293582963971131
+    },
+    {
+      "id": "checker-0-texture__H-50",
+      "scene": "checker-0-texture",
+      "setting": "H-50",
+      "mae_255": 13.499110093215387
+    },
+    {
+      "id": "checker-0-texture__S+100_H-100",
+      "scene": "checker-0-texture",
+      "setting": "S+100_H-100",
+      "mae_255": 36.76957844883653
+    },
+    {
+      "id": "checker-0-texture__S+50_H-50",
+      "scene": "checker-0-texture",
+      "setting": "S+50_H-50",
+      "mae_255": 19.369568340465168
+    }
+  ],
+  "interactions": [
+    {
+      "scene": "checker-0",
+      "level": 50,
+      "adobe_interaction_mae_255": 1.9411282009548618,
+      "native_interaction_mae_255": 0.5422277261270466,
+      "interaction_defect_mae_255": 2.1217770861848346,
+      "perfect_interaction_residual_mae_255": 20.246623409498923
+    },
+    {
+      "scene": "checker-0",
+      "level": 100,
+      "adobe_interaction_mae_255": 2.6943088107638897,
+      "native_interaction_mae_255": 1.3782966111333053,
+      "interaction_defect_mae_255": 3.3524456099302107,
+      "perfect_interaction_residual_mae_255": 38.81452233339467
+    },
+    {
+      "scene": "checker-0-texture",
+      "level": 50,
+      "adobe_interaction_mae_255": 2.0302124023437504,
+      "native_interaction_mae_255": 0.46785347500841784,
+      "interaction_defect_mae_255": 2.144443670601716,
+      "perfect_interaction_residual_mae_255": 20.714629468441455
+    },
+    {
+      "scene": "checker-0-texture",
+      "level": 100,
+      "adobe_interaction_mae_255": 2.8949720594618054,
+      "native_interaction_mae_255": 1.22094514887682,
+      "interaction_defect_mae_255": 3.488312834127567,
+      "perfect_interaction_residual_mae_255": 39.327171293790904
+    },
+    {
+      "scene": "stripes-0",
+      "level": 50,
+      "adobe_interaction_mae_255": 1.7879231770833353,
+      "native_interaction_mae_255": 0.6467561473770693,
+      "interaction_defect_mae_255": 1.967663181158637,
+      "perfect_interaction_residual_mae_255": 17.09566487706377
+    },
+    {
+      "scene": "stripes-0",
+      "level": 100,
+      "adobe_interaction_mae_255": 2.4443359375000036,
+      "native_interaction_mae_255": 1.6447271927731884,
+      "interaction_defect_mae_255": 3.2711839033807113,
+      "perfect_interaction_residual_mae_255": 35.00032399440281
+    },
+    {
+      "scene": "stripes-0-texture",
+      "level": 50,
+      "adobe_interaction_mae_255": 1.862223307291667,
+      "native_interaction_mae_255": 0.5295067930586954,
+      "interaction_defect_mae_255": 2.1024815006389175,
+      "perfect_interaction_residual_mae_255": 21.602979785752044
+    },
+    {
+      "scene": "stripes-0-texture",
+      "level": 100,
+      "adobe_interaction_mae_255": 2.3862033420138893,
+      "native_interaction_mae_255": 1.5505492598173736,
+      "interaction_defect_mae_255": 3.334870821889655,
+      "perfect_interaction_residual_mae_255": 41.538631190459014
+    }
+  ]
+}
