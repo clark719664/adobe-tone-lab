@@ -1,4 +1,4 @@
-name: Benchmark harness and unchanged PhotoCraft tests
+name: Adobe preview benchmark and unchanged PhotoCraft tests
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
@@ -12,10 +12,12 @@ jobs:
         with:
           python-version: '3.12'
       - uses: dtolnay/rust-toolchain@stable
-      - run: python -m pip install Pillow
+      - run: python -m pip install -r requirements-preview.txt
       - run: python -m unittest discover -s . -v
+      - name: Reproduce the real Adobe preview baseline
+        run: python preview_benchmark.py --oracle preview_reference --families preview_reference/families.json --build-dir .build/preview --out .build/reproduced-preview-baseline.json
       - run: python run_photocraft.py --build-dir work/build
-      - name: Missing joint references must remain an explicit unavailable result
+      - name: Missing 16-bit TIFF joint references remain explicitly unavailable
         shell: pwsh
         run: |
           python benchmark.py joint-gate work/real-adobe-exports

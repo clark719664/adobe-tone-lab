@@ -6,3 +6,5 @@
 # Byte hashes must remain identical on every checkout platform.
 vendor/** -text
 acquisition/inputs/** -text
+
+preview_reference/previews/** -text

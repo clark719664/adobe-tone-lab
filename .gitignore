@@ -4,6 +4,8 @@ __pycache__/
 references/
 imports/
 
+preview_acquisition/portable-cache/
+
 # Publication checkout: local tools, secrets and native build products.
 /build/
 /target/

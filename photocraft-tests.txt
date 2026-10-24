@@ -9,5 +9,5 @@ test local_tone::tests::smooth_gradients_stay_smooth ... ok
 test local_tone::tests::the_fast_pyramid_matches_the_plain_one_exactly ... ok
 test local_tone::tests::the_result_does_not_depend_on_the_image_size ... ok
 
-test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.33s
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.31s
 

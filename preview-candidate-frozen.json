@@ -1,0 +1,7 @@
+{
+  "coefficient": 0.4,
+  "train_mean_mae_255": 10.621887671159046,
+  "selection": "train families only; one bounded coefficient; fixed0.05grid",
+  "rejected_hypothesis": "Reversing spatialpass order: train optimum mix0; no improvement. Holdout not used for selecting this candidate.",
+  "status": "REJECTED: heldout gain below target rounding bound; not recommended"
+}

@@ -3,6 +3,7 @@ test_candidate_default_is_in_anti_regression_gate (test_benchmark.MetricsTests.t
 test_candidate_missing_default_fails (test_benchmark.MetricsTests.test_candidate_missing_default_fails) ... ok
 test_empty_effect_support_is_not_a_pass (test_benchmark.MetricsTests.test_empty_effect_support_is_not_a_pass) ... ok
 test_exact_values_and_effect (test_benchmark.MetricsTests.test_exact_values_and_effect) ... ok
+test_export_script_matches_generated_capture_jobs (test_benchmark.MetricsTests.test_export_script_matches_generated_capture_jobs) ... ok
 test_fixtures_match_source_pins (test_benchmark.MetricsTests.test_fixtures_match_source_pins) ... ok
 test_joint_gate_fails_when_oracle_absent (test_benchmark.MetricsTests.test_joint_gate_fails_when_oracle_absent) ... ok
 test_noop_baseline_has_twelve_edited_cases (test_benchmark.MetricsTests.test_noop_baseline_has_twelve_edited_cases) ... ok
@@ -11,6 +12,11 @@ test_oracle_self_comparison_is_only_a_scorer_sanity_check (test_benchmark.Metric
 test_rejects_malformed_predictions (test_benchmark.MetricsTests.test_rejects_malformed_predictions) ... ok
 test_train_and_holdout_do_not_overlap (test_benchmark.MetricsTests.test_train_and_holdout_do_not_overlap) ... ok
 test_xmp_attributes_match_every_capture_job (test_benchmark.MetricsTests.test_xmp_attributes_match_every_capture_job) ... ok
+test_holdout_values_cannot_select_parameters (test_preview_candidate.JointCandidateTests.test_holdout_values_cannot_select_parameters) ... ok
+test_quantization_uncertainty_bound (test_preview_candidate.JointCandidateTests.test_quantization_uncertainty_bound) ... ok
+test_singles_and_defaults_are_unchanged (test_preview_candidate.JointCandidateTests.test_singles_and_defaults_are_unchanged) ... ok
+test_real_jpeg_cannot_enter_prophoto_tiff_import (test_preview_oracle.PreviewOracleTests.test_real_jpeg_cannot_enter_prophoto_tiff_import) ... ok
+test_real_preview_files_match_pinned_source_manifest (test_preview_oracle.PreviewOracleTests.test_real_preview_files_match_pinned_source_manifest) ... ok
 test_all_21_synthetic_imports_are_marked_unverified (test_reference_import.ReferenceImportTests.test_all_21_synthetic_imports_are_marked_unverified) ... ok
 test_big_endian_multiple_strips_and_nonuniform_block_order (test_reference_import.ReferenceImportTests.test_big_endian_multiple_strips_and_nonuniform_block_order) ... ok
 test_capture_metadata_and_stale_hash_rejected (test_reference_import.ReferenceImportTests.test_capture_metadata_and_stale_hash_rejected) ... ok
@@ -23,6 +29,6 @@ test_synthetic_invalid_contracts_rejected (test_reference_import.ReferenceImport
 test_truncated_synthetic_file_rejected (test_reference_import.ReferenceImportTests.test_truncated_synthetic_file_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 23 tests in 5.936s
+Ran 29 tests in 4.726s
 
 OK

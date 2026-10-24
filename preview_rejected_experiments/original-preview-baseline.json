@@ -1,0 +1,86 @@
+[
+  {
+    "scene": "scene1",
+    "setting": "S+100",
+    "baseline_mae_255": 7.103397846221924,
+    "reverse_mae_255": 7.103397846221924,
+    "forward_reverse_mae_255": 0.0
+  },
+  {
+    "scene": "scene1",
+    "setting": "H-100",
+    "baseline_mae_255": 3.0340936183929443,
+    "reverse_mae_255": 3.0340936183929443,
+    "forward_reverse_mae_255": 0.0
+  },
+  {
+    "scene": "scene1",
+    "setting": "S+100_H-100",
+    "baseline_mae_255": 8.097433090209961,
+    "reverse_mae_255": 8.254098892211914,
+    "forward_reverse_mae_255": 1.0510011911392212
+  },
+  {
+    "scene": "scene1",
+    "setting": "S+50_H-50",
+    "baseline_mae_255": 4.169816493988037,
+    "reverse_mae_255": 4.1647629737854,
+    "forward_reverse_mae_255": 0.3444586992263794
+  },
+  {
+    "scene": "scene3",
+    "setting": "S+100",
+    "baseline_mae_255": 5.177460193634033,
+    "reverse_mae_255": 5.177460193634033,
+    "forward_reverse_mae_255": 0.0
+  },
+  {
+    "scene": "scene3",
+    "setting": "H-100",
+    "baseline_mae_255": 1.571116328239441,
+    "reverse_mae_255": 1.571116328239441,
+    "forward_reverse_mae_255": 0.0
+  },
+  {
+    "scene": "scene3",
+    "setting": "S+100_H-100",
+    "baseline_mae_255": 3.67111873626709,
+    "reverse_mae_255": 4.287919521331787,
+    "forward_reverse_mae_255": 0.8247005343437195
+  },
+  {
+    "scene": "scene3",
+    "setting": "S+50_H-50",
+    "baseline_mae_255": 2.0216681957244873,
+    "reverse_mae_255": 2.035346269607544,
+    "forward_reverse_mae_255": 0.06471963971853256
+  },
+  {
+    "scene": "scene4",
+    "setting": "S+100",
+    "baseline_mae_255": 7.5091047286987305,
+    "reverse_mae_255": 7.5091047286987305,
+    "forward_reverse_mae_255": 0.0
+  },
+  {
+    "scene": "scene4",
+    "setting": "H-100",
+    "baseline_mae_255": 9.176636695861816,
+    "reverse_mae_255": 9.176636695861816,
+    "forward_reverse_mae_255": 0.0
+  },
+  {
+    "scene": "scene4",
+    "setting": "S+100_H-100",
+    "baseline_mae_255": 21.74128532409668,
+    "reverse_mae_255": 19.571481704711914,
+    "forward_reverse_mae_255": 3.0349559783935547
+  },
+  {
+    "scene": "scene4",
+    "setting": "S+50_H-50",
+    "baseline_mae_255": 10.293985366821289,
+    "reverse_mae_255": 9.832348823547363,
+    "forward_reverse_mae_255": 0.8570912480354309
+  }
+]
