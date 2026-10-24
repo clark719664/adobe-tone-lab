@@ -1,0 +1,29 @@
+test_acquisition_has_paired_cases_and_hashes (test_benchmark.MetricsTests.test_acquisition_has_paired_cases_and_hashes) ... ok
+test_candidate_default_is_in_anti_regression_gate (test_benchmark.MetricsTests.test_candidate_default_is_in_anti_regression_gate) ... ok
+test_candidate_missing_default_fails (test_benchmark.MetricsTests.test_candidate_missing_default_fails) ... ok
+test_empty_effect_support_is_not_a_pass (test_benchmark.MetricsTests.test_empty_effect_support_is_not_a_pass) ... ok
+test_exact_values_and_effect (test_benchmark.MetricsTests.test_exact_values_and_effect) ... ok
+test_export_script_matches_generated_capture_jobs (test_benchmark.MetricsTests.test_export_script_matches_generated_capture_jobs) ... ok
+test_fixtures_match_source_pins (test_benchmark.MetricsTests.test_fixtures_match_source_pins) ... ok
+test_joint_gate_fails_when_oracle_absent (test_benchmark.MetricsTests.test_joint_gate_fails_when_oracle_absent) ... ok
+test_noop_baseline_has_twelve_edited_cases (test_benchmark.MetricsTests.test_noop_baseline_has_twelve_edited_cases) ... ok
+test_one_stop_effect_error (test_benchmark.MetricsTests.test_one_stop_effect_error) ... ok
+test_oracle_self_comparison_is_only_a_scorer_sanity_check (test_benchmark.MetricsTests.test_oracle_self_comparison_is_only_a_scorer_sanity_check) ... ok
+test_rejects_malformed_predictions (test_benchmark.MetricsTests.test_rejects_malformed_predictions) ... ok
+test_train_and_holdout_do_not_overlap (test_benchmark.MetricsTests.test_train_and_holdout_do_not_overlap) ... ok
+test_xmp_attributes_match_every_capture_job (test_benchmark.MetricsTests.test_xmp_attributes_match_every_capture_job) ... ok
+test_all_21_synthetic_imports_are_marked_unverified (test_reference_import.ReferenceImportTests.test_all_21_synthetic_imports_are_marked_unverified) ... ok
+test_big_endian_multiple_strips_and_nonuniform_block_order (test_reference_import.ReferenceImportTests.test_big_endian_multiple_strips_and_nonuniform_block_order) ... ok
+test_capture_metadata_and_stale_hash_rejected (test_reference_import.ReferenceImportTests.test_capture_metadata_and_stale_hash_rejected) ... ok
+test_icc_spikes_and_hidden_parametric_branches_rejected (test_reference_import.ReferenceImportTests.test_icc_spikes_and_hidden_parametric_branches_rejected) ... ok
+test_lossless_synthetic_16bit_reduction (test_reference_import.ReferenceImportTests.test_lossless_synthetic_16bit_reduction) ... ok
+test_malformed_strip_offsets_counts_and_zero_rows (test_reference_import.ReferenceImportTests.test_malformed_strip_offsets_counts_and_zero_rows) ... ok
+test_missing_real_exports_fail (test_reference_import.ReferenceImportTests.test_missing_real_exports_fail) ... ok
+test_sampled_and_all_parametric_icc_forms (test_reference_import.ReferenceImportTests.test_sampled_and_all_parametric_icc_forms) ... ok
+test_synthetic_invalid_contracts_rejected (test_reference_import.ReferenceImportTests.test_synthetic_invalid_contracts_rejected) ... ok
+test_truncated_synthetic_file_rejected (test_reference_import.ReferenceImportTests.test_truncated_synthetic_file_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 5.331s
+
+OK

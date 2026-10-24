@@ -26,3 +26,15 @@ Twenty-one paired DNG/XMP jobs: fourteen train and seven held-out scene 4. For e
 Audit exits 2 with zero saved joint cases. Joint availability gate exits 2 because all 21 paired exports are missing. No TIFF was manufactured. Actual ICC transfer curve and slider application must be independently checked when legitimate exports become available; even an availability pass does not claim fidelity.
 
 Decision: no unsupported operator fit or upstream patch. Required next evidence: legitimate paired Adobe exports on the exact capture inputs, then a real candidate run and independent photographic holdout. README contains commands, limitations and acquisition instructions.
+
+2026-10-23 — importer and portability follow-up
+
+The importer now uses only the Python standard library. It validates all 21paired jobs against original source/XMP hashes and exact settings metadata, decodes unsigned 16-bit uncompressed RGB TIFFs without 8-bit conversion, handles both byteorders and multiple strips, validates 384x256 geometry/ProPhoto primaries, checks every 65536 representable ICC input code for monotonic finite gamma 1.8 transfer within 0.003 linear tolerance, and emits 24x16 linear block luminances. Import success remains fidelity_status=not_measured and actual Adobe slider application unverified. Adobe version is user asserted, not detected from the pixels.
+
+Independent review found sparse ICC sampling could miss a LUT spike and narrow parametric branch. Two regressions failed first, then all-code validation fixed them. Final 24 tests cover those cases, sampled/all five parametric ICC forms, BE/multiple-strip/nonuniform block order, truncation, corrupt strips, metadata/hash tampering, and a complete synthetic 21-file import. Synthetic fixtures are validation inputs only and never become Adobe expectations.
+
+A manual-run Photoshop exporter now packages the upstream fresh-DNG/XMP workflow into one 21-export batch, including HasSettings=True. The script was not run in Adobe. Its source is syntax-checked with the #target directive removed for Node parsing; this does not verify Adobe APIs at runtime.
+
+Source/input portability: canonical vendor bytes are extracted directly from the pinned Git blobs; .gitattributes preserves byte-hashed files. XMP generation uses explicit LF. No Adobe reference numbers changed. A fresh local Git clone with autocrlf disabled is part of final verification.
+
+Bounded oracle follow-up: three latest release asset lists, complete trees of learned-local-tone / fix-camera-and-shadow-response / scene-tone-stage-design, and comments for issues 475/496 yielded no usable paired joint references. The first two branches have the same public probe JSON Gitblob as main. See public-oracle-search.json. External dependency remains legitimate same-build paired Adobe exports, then real candidate and photographic validation.

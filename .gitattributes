@@ -1,2 +1,8 @@
-# Preserve exact fixture, provenance, and patch bytes across platforms.
-* -text
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.jsx text eol=lf
+# Byte hashes must remain identical on every checkout platform.
+vendor/** -text
+acquisition/inputs/** -text

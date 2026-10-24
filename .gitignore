@@ -1,15 +1,15 @@
-# Local dependencies, compiled files, and temporary output
-/work/
+__pycache__/
+*.pyc
+.build/
+references/
+imports/
+
+# Publication checkout: local tools, secrets and native build products.
 /build/
 /target/
-/.godot/
-**/.godot/
-__pycache__/
-*.py[cod]
 *.exe
 *.dll
 *.pdb
 *.tmp
 .env
 .env.*
-!.env.example

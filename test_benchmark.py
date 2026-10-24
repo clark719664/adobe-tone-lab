@@ -77,6 +77,15 @@ class MetricsTests(unittest.TestCase):
             actual = {k.removeprefix(ns): v for k, v in description.attrib.items() if k.startswith(ns)}
             self.assertEqual(actual, j['settings'])
 
+    def test_export_script_matches_generated_capture_jobs(self):
+        import export_script
+        jobs = b.read(b.ROOT / 'acquisition/manifest.json')['jobs']
+        expected = export_script.build_script(jobs)
+        actual = (b.ROOT / 'acquisition/export_photoshop.jsx').read_text()
+        self.assertEqual(actual, expected)
+        self.assertIn('Requested XMP settings are not proof', actual)
+        self.assertIn('TIFFEncoding.NONE', actual)
+
     def test_candidate_missing_default_fails(self):
         with self.assertRaises(ValueError):
             b.score_predictions({})

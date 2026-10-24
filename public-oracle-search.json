@@ -1,0 +1,15 @@
+{
+  "checked_on": "2026-10-23",
+  "scope": "Bounded public joint-oracle search; not exhaustive history",
+  "repository": "https://github.com/pch/rawmakase",
+  "release_tags": ["v0.4.3", "v0.4.2", "v0.4.1"],
+  "release_result": "Listed assets are installers, source archives, recipes, signatures and checksums; no reference-render pack identified.",
+  "research_branches": [
+    {"name":"t3code/learned-local-tone", "sha":"0d1988893fff2afbb756eb248fd675113a2ded3c", "result":"Complete tree has no TIFF/NPY joint captures; public scene-probes.json matches main Git blob 68b80bdd53abd9a3f05200758d4db3a56fc0f7aa"},
+    {"name":"t3code/fix-camera-and-shadow-response", "sha":"d80349cb6614aecf77c8abefe3bdaaf66efa1295", "result":"Complete tree has no TIFF/NPY joint captures; public scene-probes.json matches main Git blob 68b80bdd53abd9a3f05200758d4db3a56fc0f7aa"},
+    {"name":"claude/scene-tone-stage-design", "sha":"63e36f3dfc8e396b60997783ca765906cd18b144", "result":"Complete tree has no scene-probe joint references or TIFF/NPY captures"}
+  ],
+  "issue_comments": [{"number":475,"count":2,"attachment_urls":[]},{"number":496,"count":11,"attachment_urls":[]}],
+  "usable_joint_oracle_found": false,
+  "remaining_dependency": "Legitimate paired Adobe exports on exact capture-kit inputs; actual settings application and reported Adobe version need independent confirmation."
+}

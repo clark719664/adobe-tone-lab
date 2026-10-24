@@ -1,47 +1,75 @@
-# Adobe operator benchmark and joint-reference acquisition kit
+# Adobe Shadows/Highlights measurement kit
 
-This is a runnable first measurement milestone. It **does not reproduce Adobe's joint Shadows/Highlights operator**. No guessed operator patch was made: the public Adobe 18.7 fixtures have zero joint-slider cases, and the private joint TIFFs /17-photo stress references are unavailable.
+**Joint Adobe fidelity remains blocked by missing paired Adobe exports.** This repository supplies a tested importer, actual competitor baseline and ready capture inputs. It does not contain a replacement joint operator or claim that single-slider tests prove joint fidelity.
 
-## What runs
+## Run from a fresh clone
 
-- `benchmark.py` scores exact linear-ProPhoto block arrays against the frozen public Camera Raw18.7 oracle. It reproduces RAWmakase's encoded MAE/max, supported-block effect error in EV, and accepted-distance allowances. Every candidate must supply all 15 scene cases (3 defaults + 12 edited). Both default and edited cases enter the regression gate. Scenes1/3 are designated train; scene 4 is held out. This split is for future candidates; no parameters were fitted here.
-- `public-baseline.json` measures a deliberately unchanged operator using each **actual Adobe default** as the prediction for its edited case. These are genuine no-op errors, not fabricated Adobe outputs. Edited-case effect errors span 0.029778–0.266790EV; 2/12 edited cases fall within the upstream accepted distances. Those upstream distances are historical thresholds, not a fresh RAWmakase engine run. This benchmark is block-level; it does not prove pixel/photo parity.
-- `run_photocraft.py` compiles the **actual unchanged pinned PhotoCraft Rust module** with its original numerical helpers and Encoding. Only parallel row/map scheduling is replaced by serial loops. It runs all 8 upstream tests plus the two upstream saved Photoshop 25.4 Camera Raw Filter grey measurements. It is neither a Python reimplementation nor a complete PhotoCraft app build.
-- `acquisition/` contains 21 paired DNG+XMP jobs: default, S+100, H-100, S+50, H-50, S+100/H-100, S+50/H-50 for each of scenes 1/3/4. Inputs are exact copies of the actual upstream reduced384×256 DNGs. Hashes and settings are recorded per job. Frozen public18.7 block values came from different-resolution original captures; **never combine those old single-slider values with new reduced-DNG joint captures**.
+Use Python 3.10 or newer. The benchmark, capture preparation, TIFF import and all 24 Python tests use only the standard library. NumPy is needed only if you run the optional copied procedural generators. Rust stable plus its native linker is needed only to rebuild the separate PhotoCraft probe.
 
-## Reproduce from a checkout
+From this repository's root:
 
-From this repository root in PowerShell (Python3.10+; NumPy is needed only for the vendored generators; Pillow is needed only to validate future TIFF imports; Rust stable/native linker is needed for the competitor probe):
-
-```powershell
-$py = 'python' # or the path to your Python 3.10+ interpreter
-& $py -m unittest discover -s . -v
-& $py run_photocraft.py --build-dir work/build
-& $py benchmark.py baseline --out public-baseline.json
-& $py benchmark.py audit
-# Exit 2 explicitly means joint oracle absent; it is not a passing fidelity test.
-& $py benchmark.py joint-gate work/real-adobe-exports
-# Expected exit 2 while the 21 paired exports are missing.
+```sh
+python -m unittest discover -s . -v
+python benchmark.py baseline --out public-baseline.json
+python benchmark.py audit
+# Expected exit 2: the public oracle contains zero joint cases.
+python benchmark.py joint-gate references
+# Expected exit 2 until all 21 real paired exports exist.
 ```
 
-A real candidate prediction file has `{"cases":{"scene1/default":[...],"scene1/S+100":[...],...}}` with 384 finite nonnegative **linear-ProPhoto block luminances** per case. Render the frozen probe input using the candidate's genuine scene-output pipeline; do not use encoded TIFF values as linear inputs. Supply every required case, including defaults. Run `benchmark.py score predictions.json --out comparison.json`; exit 1 means an upstream distance allowance is exceeded, exit 2 means invalid/missing inputs. The arrays must preserve the original 24×16 block order. MAE/max use clipped gamma 1.8 encoding. Effect compares log2(candidate/default) against log2(Adobe/default), only where all four values exceed 1/4096 and Adobe values are below 0.9. Empty support is an error. This score is a **single-slider** anti-regression check; a passing score still cannot establish joint fidelity.
+Optional actual competitor run:
 
-## Acquire the missing oracle with legitimate Adobe access
+```sh
+python run_photocraft.py --build-dir .build
+```
 
-No Adobe software was installed or invoked here. A contributor who already has authorized access can:
+`.gitattributes` preserves exact vendor/input bytes across Windows and Unix checkouts. Do not remove it: source and input hashes are byte-sensitive. `prepare_acquisition.py` regenerates the capture pack with consistent LF sidecars; it never runs Adobe software.
 
-1. Work on copies of `acquisition/inputs/`; retain these immutable originals and their hashes. Camera Raw may embed settings in a DNG, so apply the **recorded per-job settings** through its normal interface or existing upstream `camera_raw.py` workflow. A sidecar alone is not proof that Adobe used it. Check sliders, As Shot white balance, ProcessVersion 15.4, all other recorded controls, and the embedded linear profile before exporting. Do not apply an automatic preset.
-2. Export all 21 files named by `acquisition/manifest.json`, without resizing, as unsigned 16-bit RGB TIFFs with embedded **ProPhoto RGB gamma 1.8**. Use the same Camera Raw build for all paired captures. Record its actual version. These inputs require **fresh defaults and singles**, as well as joints.
-3. Copy `capture-template.json` to the export folder as `capture.json`; replace the version and each output SHA256 with values from the actual exports. Retain settings/input hashes. Do not fill placeholders with predictions. Keep unmodified TIFFs as the oracle.
-4. Run `joint-gate EXPORT_FOLDER`. It checks every paired file, input/XMP/output hashes,384×256 size, unsigned 16-bit RGB tags, embedded ICC profile description and ProPhoto primaries. **It does not yet verify the ICC transfer curve or whether Adobe really applied each slider**; independently confirm gamma 1.8 and inspect settings/capture provenance before block reduction. Success only reports paired-export availability, not fidelity. Missing files fail instead of skip.
-5. Reduce exported **decoded linear-ProPhoto** images into 24×16 block luminances using weights [0.2880402,0.7118741,0.0000857]. Preserve full-resolution TIFFs for spatial/edge analysis. Run a real candidate on those identical new inputs and paired settings. Fit only scenes 1/3 and assess scene 4 plus a separate photographic holdout before shipping an operator change. Do not replace existing frozen oracle values to make tests pass.
+## What is measured
 
-## Provenance and scope
+- The frozen public Camera Raw 18.7 JSON has 61 cases, including 27 scene cases and **zero joint Shadows/Highlights cases**. The scorer requires 15 candidate scene arrays: three defaults and 12 edited cases. Both defaults and edits enter its anti-regression gate. Scenes 1/3 are designated train and scene 4 holdout; no parameters were fitted here.
+- `public-baseline.json` measures the **no-op** operator: the actual frozen Adobe default remains unchanged for each edited case. Effect MAE spans 0.029778–0.266790 EV. Two of 12 edited cases are within historical upstream distance allowances; the overall gate fails. This is a real no-op measurement, not a new operator or a fresh RAWmakase engine render.
+- `run_photocraft.py` compiles the actual unchanged pinned Rust `local_tone.rs` with its original numerical helpers. Only row/map scheduling is serial. All eight upstream tests passed. Two saved Photoshop 25.4 grey probes measured 165.2136 versus 165.3 and 90.35554 versus 89.6, errors 0.0864 and 0.7555 levels out of 255. This narrow single-slider check is not a complete app run, Adobe 18.7 comparison, joint test or photographic holdout.
+- `reference_import.py` decodes full 16-bit values without an 8-bit image conversion. It validates TIFF strips, byte order, dimensions, orientation, unsigned RGB, compression, ICC primaries and transfer curves. ICC transfer checks evaluate **all 65,536 possible input codes**, require monotonic finite values, and allow at most 0.003 linear error from gamma 1.8. Tests include a hidden LUT spike and narrow parametric branch that sparse validation missed.
 
-`sources.json` pins RAWmakase 6c60222a927ec54cea9bb11624615b3d2baa6aa9 and PhotoCraft a02f2ee41059d3312e7ff24a5af5edcac7b6435a and records 14 vendored file SHA256s. MIT / MIT-or-Apache notices are retained. Sources in `vendor/` are unchanged. `photocraft_wrapper.rs` is generated from those sources by the runner; generated executables live only in the scratch build folder. There is no upstream source patch because evidence does not support a joint improvement yet.
+## Acquire the missing real references
 
-The copied real generators `vendor/probe_dng.py` and `vendor/probe_scenes.py` are available for expanding the experiment. Their procedural scenes are not ground-truth Adobe renders. Existing scene JSON, competitor grey measurements and the new capture queue use distinct comparison contracts; their scores must not be pooled.
+An existing licensed Photoshop/Camera Raw installation is the remaining external dependency. No Adobe software, account, trial, login or export was installed or invoked here. The included exporter was syntax-checked, **not executed in Adobe**.
 
-The authored benchmark/acquisition harness and documentation are MIT licensed (LICENSE). Vendored RAWmakase files remain MIT licensed and PhotoCraft files remain MIT-or-Apache-2.0; their complete notices are in vendor/. Generated photocraft_wrapper.rs contains derived PhotoCraft helpers under those same upstream terms. No Adobe application or private photographic reference corpus is distributed.
+The current experiment requires **one batch producing 21 TIFFs**: seven settings on each of three scenes. This includes fresh defaults and single-slider controls as well as two joint settings. The TIFFs must come from the same Camera Raw build and these exact inputs. Existing full-resolution public measurements cannot substitute for any member of this new reduced-resolution batch.
 
-GitHub Actions checks the benchmark harness and unchanged PhotoCraft tests on Windows. This job does not validate Adobe joint fidelity.
+1. Keep `acquisition/` together. In your existing Photoshop installation choose **File → Scripts → Browse**, then select `acquisition/export_photoshop.jsx`. Choose a fresh empty output folder. The script copies each DNG and its exact XMP to a separate capture folder, requests ProPhoto RGB/16-bit, and exports uncompressed TIFFs without resizing. You do not need to type 21 slider combinations. Existing documents and source inputs are preserved. If any export fails, inspect `export-report.txt`; do not fill missing files with predictions.
+2. Independently check that Camera Raw applied the requested settings and embedded linear profile, including `ProcessVersion=15.4`. The XMP now includes upstream's `HasSettings=True`. A saved TIFF, script or ICC profile **does not prove that Adobe honored the sliders**. Use one consistent build and record its actual Camera Raw version. If only Lightroom is available, manually import these paired inputs and apply the recorded settings; the Photoshop script cannot run there.
+3. From the kit root, record hashes and import the completed folder:
+
+```sh
+python reference_import.py capture /path/to/exports --adobe-version "ACTUAL CAMERA RAW VERSION"
+python reference_import.py import /path/to/exports --out imported-joint-references.json
+python benchmark.py joint-gate /path/to/exports
+```
+
+`capture` validates all 21 TIFFs and generates `capture.json` with hashes and requested settings. It refuses to overwrite an existing capture record. The Adobe version is a **user assertion**, and actual slider application remains explicitly **unverified**. No manual hash entry is needed. An import checks exact job IDs, original input hashes, XMP settings/hashes, per-output hashes, metadata and pixel/profile contract, then emits 24×16 block luminances in linear ProPhoto order. It never modifies the TIFFs or old oracle JSON. Retain the TIFFs for spatial/edge analysis.
+
+A successful import reports `fidelity_status: not_measured`. It proves capture-file consistency, not that those files were produced by Adobe or that a candidate matches them. Synthetic test fixtures live only in temporary test folders and are labelled `SYNTHETIC TEST ONLY`; their values are never installed as Adobe expectations. No real joint references have been imported here.
+
+## Evaluate a real candidate
+
+For the **existing public single-slider** benchmark, provide a JSON object `{"cases":{"scene1/default":[...],"scene1/S+100":[...],...}}` with 384 finite nonnegative linear-ProPhoto block luminances per required case, in the original 24×16 order. Obtain predictions from the candidate's genuine scene-output pipeline. Do not treat encoded TIFF samples as linear values.
+
+```sh
+python benchmark.py score predictions.json --out comparison.json
+```
+
+Exit 1 means an upstream distance allowance was exceeded; exit 2 means invalid/missing input. MAE/max use clipped gamma 1.8 encoding. Effect compares log2(candidate/default) against log2(Adobe/default), using only blocks where all four values exceed 1/4096 and Adobe values are below 0.9. Empty support is an error. Passing this gate still says nothing about joint fidelity.
+
+For the **new joint capture batch**, run the real candidate on identical reduced DNGs and paired settings. Use the imported fresh controls and joints together; do not mix them with old public cases. Fit only scenes 1/3, assess scene 4 and then an independent photographic holdout before shipping an operator change. The importer is ready; a joint candidate and its fidelity gate remain unimplemented because real joint evidence is absent.
+
+## Provenance and search boundary
+
+`sources.json` pins RAWmakase `6c60222a927ec54cea9bb11624615b3d2baa6aa9` and PhotoCraft `a02f2ee41059d3312e7ff24a5af5edcac7b6435a`. All 14 vendored files are extracted directly from those **canonical Git blobs**, with SHA256s and original licenses preserved. `photocraft_wrapper.rs` is generated by the runner. The optional copied generators create procedural inputs, never Adobe expected outputs.
+
+A bounded follow-up checked the latest three RAWmakase releases, three relevant research branches, and attachments in issues 475/496 comments. It found no usable paired joint oracle in those targets; details are in `public-oracle-search.json`. This is not an exhaustive search of every historical asset. The missing dependency is a legitimate fresh paired export batch, followed by photographic validation. No guessed operator patch was made.
+
+The authored benchmark/acquisition harness and documentation are MIT licensed (LICENSE). Vendored RAWmakase files remain MIT licensed and PhotoCraft files remain MIT-or-Apache-2.0; their complete notices are in vendor/. Generated photocraft_wrapper.rs contains derived PhotoCraft helpers under those same upstream terms.
+
+GitHub Actions checks the Python benchmark/importer harness and unchanged PhotoCraft tests on Windows. A successful run does not establish Adobe joint fidelity.

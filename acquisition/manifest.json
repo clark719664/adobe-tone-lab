@@ -7,13 +7,14 @@
       "input": "inputs/scene1__default.dng",
       "input_sha256": "d2c8ca967ae34171ca740231a68aa8641f989a39762f32cc7f205dfc23fab681",
       "xmp": "inputs/scene1__default.xmp",
-      "xmp_sha256": "d523359a10af8932564acafcda89ea615fc4e37d775900931c60b0f13640cdb5",
+      "xmp_sha256": "789c2500c14a853b3de451f9b024a360a5e4ee8f4bcd40624653f73768c4940d",
       "output": "scene1__default.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -42,13 +43,14 @@
       "input": "inputs/scene1__S+100.dng",
       "input_sha256": "d2c8ca967ae34171ca740231a68aa8641f989a39762f32cc7f205dfc23fab681",
       "xmp": "inputs/scene1__S+100.xmp",
-      "xmp_sha256": "ce129a100c1cbfdce921cbf1cd4f86d1964b356e6cfb519b97895eb81b380546",
+      "xmp_sha256": "63ddd952f496089723ce71d986f1d6877889c20b0a24a260fa714701b32647a3",
       "output": "scene1__S+100.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -77,13 +79,14 @@
       "input": "inputs/scene1__H-100.dng",
       "input_sha256": "d2c8ca967ae34171ca740231a68aa8641f989a39762f32cc7f205dfc23fab681",
       "xmp": "inputs/scene1__H-100.xmp",
-      "xmp_sha256": "774be4864a3e6b410136a3ed73ac8d4e6bcc723c33fc565ae6927dfc4adf6d11",
+      "xmp_sha256": "ffe84fe407b74650280c80502386ddd38327e9ccafbfa031081c0e5fd9461eba",
       "output": "scene1__H-100.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -112,13 +115,14 @@
       "input": "inputs/scene1__S+50.dng",
       "input_sha256": "d2c8ca967ae34171ca740231a68aa8641f989a39762f32cc7f205dfc23fab681",
       "xmp": "inputs/scene1__S+50.xmp",
-      "xmp_sha256": "31642a6977455581a1bb8253031310a891adae6683bada8a4ff99b1b37fbc513",
+      "xmp_sha256": "bcf8908433ce6dca4376cf67156d5b2d4ae2498696e12ef5d9d6e6bac9f421d8",
       "output": "scene1__S+50.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -147,13 +151,14 @@
       "input": "inputs/scene1__H-50.dng",
       "input_sha256": "d2c8ca967ae34171ca740231a68aa8641f989a39762f32cc7f205dfc23fab681",
       "xmp": "inputs/scene1__H-50.xmp",
-      "xmp_sha256": "31329ab91fbf6bf170d33c647c23a215d3fe9e6e5f09eae8395aae4330485fc8",
+      "xmp_sha256": "b20fee828819f433886bced8d01652584d340cb10d0fe2f5747b4d2885ff0559",
       "output": "scene1__H-50.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -182,13 +187,14 @@
       "input": "inputs/scene1__S+100_H-100.dng",
       "input_sha256": "d2c8ca967ae34171ca740231a68aa8641f989a39762f32cc7f205dfc23fab681",
       "xmp": "inputs/scene1__S+100_H-100.xmp",
-      "xmp_sha256": "7f41e2bcee4c2f738af2e30c95e199ab22d61a8ee592750e4ad9223bac8b657a",
+      "xmp_sha256": "e24e1055f76a402492937fa380e634c7972c358c3e7353740832dd0b005c1cb6",
       "output": "scene1__S+100_H-100.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -217,13 +223,14 @@
       "input": "inputs/scene1__S+50_H-50.dng",
       "input_sha256": "d2c8ca967ae34171ca740231a68aa8641f989a39762f32cc7f205dfc23fab681",
       "xmp": "inputs/scene1__S+50_H-50.xmp",
-      "xmp_sha256": "0b7cbe5d8b60f0a74ac80a13c554a5373fa639553c1f8ee2fa86e7595d8b9da1",
+      "xmp_sha256": "3ec001cf61cbc09ffd92d7dd7ce4be07fd380871b1c76a41780eea0793a36a05",
       "output": "scene1__S+50_H-50.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -252,13 +259,14 @@
       "input": "inputs/scene3__default.dng",
       "input_sha256": "ca9caec9c2f82d3ab87a2aad045cb3436c8e6da27163a8e1cf711d73e06ea728",
       "xmp": "inputs/scene3__default.xmp",
-      "xmp_sha256": "d523359a10af8932564acafcda89ea615fc4e37d775900931c60b0f13640cdb5",
+      "xmp_sha256": "789c2500c14a853b3de451f9b024a360a5e4ee8f4bcd40624653f73768c4940d",
       "output": "scene3__default.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -287,13 +295,14 @@
       "input": "inputs/scene3__S+100.dng",
       "input_sha256": "ca9caec9c2f82d3ab87a2aad045cb3436c8e6da27163a8e1cf711d73e06ea728",
       "xmp": "inputs/scene3__S+100.xmp",
-      "xmp_sha256": "ce129a100c1cbfdce921cbf1cd4f86d1964b356e6cfb519b97895eb81b380546",
+      "xmp_sha256": "63ddd952f496089723ce71d986f1d6877889c20b0a24a260fa714701b32647a3",
       "output": "scene3__S+100.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -322,13 +331,14 @@
       "input": "inputs/scene3__H-100.dng",
       "input_sha256": "ca9caec9c2f82d3ab87a2aad045cb3436c8e6da27163a8e1cf711d73e06ea728",
       "xmp": "inputs/scene3__H-100.xmp",
-      "xmp_sha256": "774be4864a3e6b410136a3ed73ac8d4e6bcc723c33fc565ae6927dfc4adf6d11",
+      "xmp_sha256": "ffe84fe407b74650280c80502386ddd38327e9ccafbfa031081c0e5fd9461eba",
       "output": "scene3__H-100.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -357,13 +367,14 @@
       "input": "inputs/scene3__S+50.dng",
       "input_sha256": "ca9caec9c2f82d3ab87a2aad045cb3436c8e6da27163a8e1cf711d73e06ea728",
       "xmp": "inputs/scene3__S+50.xmp",
-      "xmp_sha256": "31642a6977455581a1bb8253031310a891adae6683bada8a4ff99b1b37fbc513",
+      "xmp_sha256": "bcf8908433ce6dca4376cf67156d5b2d4ae2498696e12ef5d9d6e6bac9f421d8",
       "output": "scene3__S+50.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -392,13 +403,14 @@
       "input": "inputs/scene3__H-50.dng",
       "input_sha256": "ca9caec9c2f82d3ab87a2aad045cb3436c8e6da27163a8e1cf711d73e06ea728",
       "xmp": "inputs/scene3__H-50.xmp",
-      "xmp_sha256": "31329ab91fbf6bf170d33c647c23a215d3fe9e6e5f09eae8395aae4330485fc8",
+      "xmp_sha256": "b20fee828819f433886bced8d01652584d340cb10d0fe2f5747b4d2885ff0559",
       "output": "scene3__H-50.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -427,13 +439,14 @@
       "input": "inputs/scene3__S+100_H-100.dng",
       "input_sha256": "ca9caec9c2f82d3ab87a2aad045cb3436c8e6da27163a8e1cf711d73e06ea728",
       "xmp": "inputs/scene3__S+100_H-100.xmp",
-      "xmp_sha256": "7f41e2bcee4c2f738af2e30c95e199ab22d61a8ee592750e4ad9223bac8b657a",
+      "xmp_sha256": "e24e1055f76a402492937fa380e634c7972c358c3e7353740832dd0b005c1cb6",
       "output": "scene3__S+100_H-100.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -462,13 +475,14 @@
       "input": "inputs/scene3__S+50_H-50.dng",
       "input_sha256": "ca9caec9c2f82d3ab87a2aad045cb3436c8e6da27163a8e1cf711d73e06ea728",
       "xmp": "inputs/scene3__S+50_H-50.xmp",
-      "xmp_sha256": "0b7cbe5d8b60f0a74ac80a13c554a5373fa639553c1f8ee2fa86e7595d8b9da1",
+      "xmp_sha256": "3ec001cf61cbc09ffd92d7dd7ce4be07fd380871b1c76a41780eea0793a36a05",
       "output": "scene3__S+50_H-50.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -497,13 +511,14 @@
       "input": "inputs/scene4__default.dng",
       "input_sha256": "4633eeeb2866969fed1c08158a92a6cc72b43b96eb508ed1490c0f948fd078c0",
       "xmp": "inputs/scene4__default.xmp",
-      "xmp_sha256": "d523359a10af8932564acafcda89ea615fc4e37d775900931c60b0f13640cdb5",
+      "xmp_sha256": "789c2500c14a853b3de451f9b024a360a5e4ee8f4bcd40624653f73768c4940d",
       "output": "scene4__default.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -532,13 +547,14 @@
       "input": "inputs/scene4__S+100.dng",
       "input_sha256": "4633eeeb2866969fed1c08158a92a6cc72b43b96eb508ed1490c0f948fd078c0",
       "xmp": "inputs/scene4__S+100.xmp",
-      "xmp_sha256": "ce129a100c1cbfdce921cbf1cd4f86d1964b356e6cfb519b97895eb81b380546",
+      "xmp_sha256": "63ddd952f496089723ce71d986f1d6877889c20b0a24a260fa714701b32647a3",
       "output": "scene4__S+100.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -567,13 +583,14 @@
       "input": "inputs/scene4__H-100.dng",
       "input_sha256": "4633eeeb2866969fed1c08158a92a6cc72b43b96eb508ed1490c0f948fd078c0",
       "xmp": "inputs/scene4__H-100.xmp",
-      "xmp_sha256": "774be4864a3e6b410136a3ed73ac8d4e6bcc723c33fc565ae6927dfc4adf6d11",
+      "xmp_sha256": "ffe84fe407b74650280c80502386ddd38327e9ccafbfa031081c0e5fd9461eba",
       "output": "scene4__H-100.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -602,13 +619,14 @@
       "input": "inputs/scene4__S+50.dng",
       "input_sha256": "4633eeeb2866969fed1c08158a92a6cc72b43b96eb508ed1490c0f948fd078c0",
       "xmp": "inputs/scene4__S+50.xmp",
-      "xmp_sha256": "31642a6977455581a1bb8253031310a891adae6683bada8a4ff99b1b37fbc513",
+      "xmp_sha256": "bcf8908433ce6dca4376cf67156d5b2d4ae2498696e12ef5d9d6e6bac9f421d8",
       "output": "scene4__S+50.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -637,13 +655,14 @@
       "input": "inputs/scene4__H-50.dng",
       "input_sha256": "4633eeeb2866969fed1c08158a92a6cc72b43b96eb508ed1490c0f948fd078c0",
       "xmp": "inputs/scene4__H-50.xmp",
-      "xmp_sha256": "31329ab91fbf6bf170d33c647c23a215d3fe9e6e5f09eae8395aae4330485fc8",
+      "xmp_sha256": "b20fee828819f433886bced8d01652584d340cb10d0fe2f5747b4d2885ff0559",
       "output": "scene4__H-50.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -672,13 +691,14 @@
       "input": "inputs/scene4__S+100_H-100.dng",
       "input_sha256": "4633eeeb2866969fed1c08158a92a6cc72b43b96eb508ed1490c0f948fd078c0",
       "xmp": "inputs/scene4__S+100_H-100.xmp",
-      "xmp_sha256": "7f41e2bcee4c2f738af2e30c95e199ab22d61a8ee592750e4ad9223bac8b657a",
+      "xmp_sha256": "e24e1055f76a402492937fa380e634c7972c358c3e7353740832dd0b005c1cb6",
       "output": "scene4__S+100_H-100.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -707,13 +727,14 @@
       "input": "inputs/scene4__S+50_H-50.dng",
       "input_sha256": "4633eeeb2866969fed1c08158a92a6cc72b43b96eb508ed1490c0f948fd078c0",
       "xmp": "inputs/scene4__S+50_H-50.xmp",
-      "xmp_sha256": "0b7cbe5d8b60f0a74ac80a13c554a5373fa639553c1f8ee2fa86e7595d8b9da1",
+      "xmp_sha256": "3ec001cf61cbc09ffd92d7dd7ce4be07fd380871b1c76a41780eea0793a36a05",
       "output": "scene4__S+50_H-50.tif",
       "dimensions": [
         384,
         256
       ],
       "settings": {
+        "HasSettings": "True",
         "ProcessVersion": "15.4",
         "WhiteBalance": "As Shot",
         "LensProfileEnable": "0",
@@ -742,6 +763,8 @@
     "bits_per_channel": 16,
     "color_space": "ProPhoto RGB",
     "embedded_icc": true,
+    "compression": "none",
+    "orientation": 1,
     "resize": false,
     "linear_profile": "Embedded in DNG",
     "process_version": "15.4"

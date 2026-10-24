@@ -7,7 +7,7 @@ SETTINGS={'default':{}, 'S+100':{'Shadows2012':'100'}, 'H-100':{'Highlights2012'
  'S+50':{'Shadows2012':'50'}, 'H-50':{'Highlights2012':'-50'},
  'S+100_H-100':{'Shadows2012':'100','Highlights2012':'-100'},
  'S+50_H-50':{'Shadows2012':'50','Highlights2012':'-50'}}
-BASE={'ProcessVersion':'15.4','WhiteBalance':'As Shot','LensProfileEnable':'0','AutoLateralCA':'0',
+BASE={'HasSettings':'True','ProcessVersion':'15.4','WhiteBalance':'As Shot','LensProfileEnable':'0','AutoLateralCA':'0',
  'Sharpness':'0','LuminanceSmoothing':'0','ColorNoiseReduction':'0','Exposure2012':'0','Contrast2012':'0',
  'Highlights2012':'0','Shadows2012':'0','Whites2012':'0','Blacks2012':'0','Texture':'0','Clarity2012':'0',
  'Dehaze':'0','Vibrance':'0','Saturation':'0','PostCropVignetteAmount':'0','GrainAmount':'0'}
@@ -33,18 +33,20 @@ def main():
 <rdf:Description rdf:about="" xmlns:crs="http://ns.adobe.com/camera-raw-settings/1.0/" {attributes}/>
 </rdf:RDF></x:xmpmeta>
 '''
-            target.with_suffix('.xmp').write_text(text,encoding='utf-8')
+            target.with_suffix('.xmp').write_text(text,encoding='utf-8',newline='\n')
             jobs.append({'id':ident,'input':'inputs/'+target.name,'input_sha256':digest,
               'xmp':'inputs/'+target.with_suffix('.xmp').name,'xmp_sha256':hashlib.sha256(target.with_suffix('.xmp').read_bytes()).hexdigest(),
               'output':ident+'.tif','dimensions':[384,256],'settings':all_settings,
               'split':'holdout' if scene in b.SPLIT['holdout'] else 'train'})
     b.write(dest/'manifest.json',{'schema':1,'source_pins':'../sources.json','jobs':jobs,
       'export_contract':{'bits_per_channel':16,'color_space':'ProPhoto RGB','embedded_icc':True,
-        'resize':False,'linear_profile':'Embedded in DNG','process_version':'15.4'},
+        'compression':'none','orientation':1,'resize':False,'linear_profile':'Embedded in DNG','process_version':'15.4'},
       'note':'These exact reduced DNG inputs require fresh paired exports. Existing public scene block measurements were captured at a different resolution; never combine them into these joint capture sets.'})
     b.write(dest/'capture-template.json',{'adobe_version':'FILL ACTUAL CAMERA RAW VERSION',
       'process_version':'15.4','color_space':'ProPhoto RGB','bits_per_channel':16,
       'files':{j['id']:{'sha256':'FILL SHA256 OF REAL TIFF','input_sha256':j['input_sha256'],'settings':j['settings']} for j in jobs}})
+    from export_script import build_script
+    (dest/'export_photoshop.jsx').write_text(build_script(jobs),encoding='utf-8')
     print(f'Wrote {len(jobs)} paired DNG/XMP jobs; no Adobe exports were produced.')
 
 if __name__=='__main__':main()

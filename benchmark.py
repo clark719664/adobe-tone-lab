@@ -101,49 +101,10 @@ def public_baseline():
 
 
 def joint_gate(folder):
-    """Fail closed until every paired real export exists; never synthesize an oracle."""
-    manifest = read(ROOT / 'acquisition/manifest.json')
-    for job in manifest['jobs']:
-        for key in ('input', 'xmp'):
-            p = ROOT / 'acquisition' / job[key]
-            if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest() != job[key + '_sha256']:
-                raise ValueError('acquisition input integrity failure: ' + job['id'])
-    missing = [j['output'] for j in manifest['jobs'] if not (folder / j['output']).is_file()]
-    if missing:
-        raise ValueError(f'missing joint Adobe references: {len(missing)} paired exports absent; first: {missing[0]}')
-    capture = read(folder / 'capture.json')
-    if not capture.get('adobe_version') or 'FILL' in capture['adobe_version'] or capture.get('process_version') != '15.4':
-        raise ValueError('capture must identify actual Adobe version and ProcessVersion15.4')
-    if capture.get('color_space') != 'ProPhoto RGB' or capture.get('bits_per_channel') != 16:
-        raise ValueError('capture must use 16-bit ProPhoto RGB')
-    from PIL import Image, ImageCms
-    import io
-    for job in manifest['jobs']:
-        p = folder / job['output']
-        item = capture.get('files', {}).get(job['id'], {})
-        digest = hashlib.sha256(p.read_bytes()).hexdigest()
-        if item.get('sha256') != digest or item.get('input_sha256') != job['input_sha256'] or item.get('settings') != job['settings']:
-            raise ValueError('capture metadata/hash mismatch: ' + job['id'])
-        with Image.open(p) as image:
-            if image.format != 'TIFF' or list(image.size) != job['dimensions']:
-                raise ValueError('TIFF format/dimensions mismatch: ' + job['id'])
-            if tuple(image.tag_v2.get(258, ())) != (16, 16, 16) or not image.tag_v2.get(34675):
-                raise ValueError('16-bit RGB with embedded ICC profile required: ' + job['id'])
-            icc = ImageCms.ImageCmsProfile(io.BytesIO(image.info['icc_profile']))
-            name = ImageCms.getProfileDescription(icc).strip().lower()
-            if 'prophoto' not in name and 'romm' not in name:
-                raise ValueError('ICC description is not ProPhoto/ROMM: ' + job['id'])
-            # D50-adapted ProPhoto primaries; name alone can describe another profile.
-            want = ((.7976749, .2880402, 0.), (.1351917, .7118741, 0.), (.0313534, .0000857, .8252100))
-            got = [getattr(icc.profile, c + '_colorant')[0] for c in ('red', 'green', 'blue')]
-            if any(abs(a-b) > .004 for row, target in zip(got, want) for a, b in zip(row, target)):
-                raise ValueError('ICC primaries differ from ProPhoto: ' + job['id'])
-            sample_format = image.tag_v2.get(339, (1, 1, 1))
-            if sample_format not in ((1, 1, 1), (1,)):
-                raise ValueError('unsigned-integer RGB TIFF required: ' + job['id'])
-    return {'status': 'paired_exports_present', 'exports': len(manifest['jobs']),
-            'icc_transfer_curve': 'not_verified; independently verify gamma1.8 before reducing to linear block values',
-            'fidelity_status': 'not_measured; render candidate at matching boundary before comparison'}
+    """Validate the complete paired capture set; never claim measured fidelity."""
+    import reference_import
+    result = reference_import.import_references(folder)
+    return {k: v for k, v in result.items() if k != 'cases'} | {'exports': len(result['cases'])}
 
 
 def main():
